@@ -11,7 +11,7 @@ const instance = () => {
         });
 
         if (process.env.NODE_ENV != 'development' && process.env.NODE_ENV != undefined) {
-            sequelize = new Sequelize(process.env.DBURL)
+            sequelize = new Sequelize(process.env.DATABASE_URL)
         }
 
         return sequelize
