@@ -72,34 +72,34 @@ const index = async (r, w) => {
 
             }
 
-            if(claims.role === 'SELLER') {
+        }
 
+        if(claims.role === 'SELLER') {
+
+            if (_.has(filters, "where")) {
+                filters.where.userId = claims.id
+            } else {
+                filters.where = {
+                    userId: claims.id
+                }
+            }
+
+        }
+
+        if(claims.role === 'ADMIN') {
+    
+            if (_.has(query, "userid")) {
+                
                 if (_.has(filters, "where")) {
-                    filters.where.userId = claims.id
+                    filters.where.userId = query.userid
                 } else {
                     filters.where = {
-                        userId: claims.id
+                        userId: query.userid
                     }
                 }
-    
-            }
-    
-            if(claims.role === 'ADMIN') {
-    
-                if (_.has(query, "userid")) {
-                    
-                    if (_.has(filters, "where")) {
-                        filters.where.userId = query.userid
-                    } else {
-                        filters.where = {
-                            userId: query.userid
-                        }
-                    }
 
-                }
-    
             }
-
+            
         }
 
         const products = await Product.findAll(filters)
