@@ -5,7 +5,7 @@ process.env.PORT = process.env.PORT || 3000
 process.env.NODE_ENV = process.env.NODE_ENV || 'development'
 
 // Postgres uri
-process.env.DATABASE_URL = process.env.NODE_ENV == 'development' ? 'postgres://postgres:password@localhost:5432/node_challenge_development' : process.env.DATABASE_URL
+process.env.DBURL = process.env.NODE_ENV == 'development' ? 'postgres://postgres:password@localhost:5432/node_challenge_development' : process.env.DBURL
 
 // JWT Expiration date
 process.env.JWT_EXDATE = '192h'
