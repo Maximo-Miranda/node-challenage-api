@@ -102,7 +102,7 @@ const register = async (r, w) => {
             role: values.account_type
         })
 
-        const data = _.pick(user, ['id', 'firtname', 'lastname', 'email', 'role', 'created_at', 'updated_at'])
+        const data = _.pick(user, ['id', 'firstname', 'lastname', 'email', 'role', 'createdAt', 'updatedAt'])
 
         return w.status(200).json({
             error: false,
