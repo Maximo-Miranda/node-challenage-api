@@ -39,7 +39,7 @@ const login = async (r, w) => {
             })
         }
 
-        const claims = _.pick(user, ['id', 'firtname', 'lastname', 'email', 'role'])
+        const claims = _.pick(user, ['id', 'firstname', 'lastname', 'email', 'role'])
 
         const token = jwt.sign(claims, process.env.APP_SECRET_KEY, { expiresIn: process.env.JWT_EXDATE });
 
